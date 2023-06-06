@@ -57,7 +57,7 @@ public class Exercicio_17 {
                    valorParcela = precoFinal / qtdePacelas;
 
                }else {
-                   precoFinal = valorCarro - (valorCarro * valorDesconto);
+                   precoFinal =valorCarro- (valorCarro * valorDesconto);
                    valorParcela = precoFinal / qtdePacelas;
                }
                System.out.println("Preço Final " + precoFinal);
