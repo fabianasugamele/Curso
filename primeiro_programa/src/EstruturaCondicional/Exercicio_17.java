@@ -33,49 +33,36 @@ public class Exercicio_17 {
                System.out.println("Em quantas vezes");
                qtdePacelas = teclaSdo.nextInt();
 
-               if (qtdePacelas > 1 && qtdePacelas <= 24) {
+               if (qtdePacelas > 1 && qtdePacelas < 24) {
                    percentualAcrescimo = 0.06;
                    precoFinal = valorCarro + (valorCarro * percentualAcrescimo);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
-               } else if (qtdePacelas > 24 && qtdePacelas < 36) {
+               } else if (qtdePacelas >= 24 && qtdePacelas < 36) {
                    percentualAcrescimo = 0.12;
                    precoFinal = valorCarro + (valorCarro * percentualAcrescimo);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
-               } else if (qtdePacelas > 36 && qtdePacelas < 48) {
+               } else if (qtdePacelas >= 36 && qtdePacelas < 48) {
                    percentualAcrescimo = 0.18;
                    precoFinal = valorCarro + (valorCarro * percentualAcrescimo);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
-               } else if (qtdePacelas > 48 && qtdePacelas < 60) {
+
+               } else if (qtdePacelas >= 48 && qtdePacelas < 60) {
                    percentualAcrescimo = 0.24;
                    precoFinal = valorCarro + (valorCarro * percentualAcrescimo);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
+
                }else if (qtdePacelas>=60){
                    percentualAcrescimo = 0.30;
                    precoFinal = valorCarro + (valorCarro * percentualAcrescimo);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
+
                }else {
                    precoFinal = valorCarro - (valorCarro * valorDesconto);
                    valorParcela = precoFinal / qtdePacelas;
-                   System.out.println("Preço Final " + precoFinal);
-                   System.out.println("Parcelas: " + qtdePacelas);
-                   System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
-
                }
+               System.out.println("Preço Final " + precoFinal);
+               System.out.println("Parcelas: " + qtdePacelas);
+               System.out.println("Valor das Parcelas: " + Math.ceil(valorParcela));
            }
 
         }

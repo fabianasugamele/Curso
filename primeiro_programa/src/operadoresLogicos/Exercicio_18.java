@@ -11,7 +11,7 @@ public class Exercicio_18 {
 • Se quantidade > 10 o desconto será de 5%/*
    */
      public static void main(String[] args) {
-         
+
 
   }
 }
