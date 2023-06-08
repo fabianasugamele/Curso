@@ -1,23 +1,21 @@
-package OperadoresRelacionais;
+package estruturaRepeticao;
 
-import javax.crypto.spec.PSource;
-import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
-public class Exercicio_9 {
+public class testaRestoDivisao {
+
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         int numero;
 
         System.out.println("Digite um numero ");
         numero = teclado.nextInt();
-        if(numero%2 ==0){
-            System.out.println("è par");
+        if (numero%11==2){
 
+            System.out.println("verdadeiro");
         }else {
-            System.out.println("impar");
+            System.out.println("Falso");
         }
+
     }
-
-
 }
