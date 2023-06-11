@@ -45,17 +45,14 @@ public class DesafioFinal {
                     }
                     break;
                 case 2:
-                    for (int i =0;i<contaCliente.length;i++) {
-                        if(contaCliente[i] == null || contaCliente[i].isEmpty()) {
-                            continue;
-                        }
-                        System.out.println("Posicao " + i + " = "
-                                + contaCliente[i] + " "
-                                + "Conta Numero " + numeroConta[i] +
-                                " Agência " + numeroAgencia[i] +
-                                " Saldo inicial " + saldoInicial[i]);
-                    }
+                    showContasCadastradas(contaCliente, numeroConta, numeroAgencia, saldoInicial);
                 break;
+                case 3:
+                    System.out.println("Digite a posição da conta que você deseja excluir ");
+                    showContasCadastradas(contaCliente, numeroConta, numeroAgencia, saldoInicial);
+                    int contaExcluir = checkInt(teclado);
+                    removerConta(contaExcluir,contaCliente,numeroConta,numeroAgencia,saldoInicial);
+                    break;
             }
 
         }
@@ -63,11 +60,25 @@ public class DesafioFinal {
     }
 
     private static void showMenu() {
+        System.out.println("");
         System.out.println("Escolhe as opçoes");
         System.out.println("1 -Cadastrar Conta");
         System.out.println("2 -Consultar Contas");
         System.out.println("3 -Remover conta");
         System.out.println("4 = Sair");
+    }
+
+    private static void showContasCadastradas(String [] contaCliente, int[] numeroConta, int[] numeroAgencia, double[] saldoInicial) {
+        for (int i = 0; i < contaCliente.length; i++) {
+            if (contaCliente[i] == null || contaCliente[i].isEmpty()) {
+                continue;
+            }
+            System.out.println("Posicao " + i + " = "
+                    + contaCliente[i] + " "
+                    + "Conta Numero " + numeroConta[i] +
+                    " Agência " + numeroAgencia[i] +
+                    " Saldo inicial " + saldoInicial[i]);
+        }
     }
 
     private static void printTipoDeConta(){
@@ -107,4 +118,12 @@ public class DesafioFinal {
         }
     }
 
+    private static void removerConta(int posicao, String [] contaCliente, int[] numeroConta, int[] numeroAgencia, double[] saldoInicial) {
+        contaCliente[posicao] = null;
+        numeroConta[posicao] = 0;
+        numeroAgencia[posicao] = 0;
+        saldoInicial[posicao] = 0;
+        System.out.println("\u001B[32mConta removida com sucesso\u001B[0m");
+        showContasCadastradas(contaCliente,numeroConta,numeroAgencia,saldoInicial);
+    }
 }
