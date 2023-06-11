@@ -21,7 +21,7 @@ public class DesafioFinal {
             while (menu>4){
                 System.out.println("Número inválido");
                 System.out.println("Digite numero entre 1 e 4 para retornar ao menu");
-                menu = teclado.nextInt();
+                menu = checkInt(teclado);
             }if (menu == 4){
                 System.out.println("Programa Encerrado Com sucesso ");
             }switch (menu){
