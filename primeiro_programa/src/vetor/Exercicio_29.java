@@ -1,9 +1,5 @@
 package vetor;
 
-import javafx.scene.transform.Scale;
-import sun.nio.cs.ArrayEncoder;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 

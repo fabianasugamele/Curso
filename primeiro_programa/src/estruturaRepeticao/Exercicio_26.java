@@ -1,7 +1,5 @@
 package estruturaRepeticao;
 
-import javafx.scene.transform.Scale;
-
 import java.util.Scanner;
 
 public class Exercicio_26 {
