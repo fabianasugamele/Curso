@@ -2,6 +2,7 @@ package desafioFinal.menu;
 
 import desafioFinal.services.ContaCorrente;
 import desafioFinal.services.ContaPoupanca;
+import desafioFinal.utils.Textos;
 
 import java.util.Scanner;
 
@@ -9,18 +10,18 @@ public class Cadastrar extends Menu {
     @Override
     public void showMenu() {
         System.out.println("");
-        System.out.println("Qual tipo de conta deseja cadastrar ?");
-        System.out.println("1 - Conta Corrente");
-        System.out.println("2 - Conta Poupança");
-        System.out.println("3 - Voltar");
+        Textos.mensagemBlue("Qual tipo de conta deseja cadastrar ?");
+        Textos.mensagemYellow("1 - Conta Corrente");
+        Textos.mensagemYellow("2 - Conta Poupança");
+        Textos.mensagemYellow("3 - Voltar");
     }
 
     @Override
     public void executaMenu() {
         Menu menuCadastrar = new Cadastrar();
         while (this.opcaoMenu>3 || this.opcaoMenu == 0){
-            System.out.println("Número inválido");
-            System.out.println("Digite numero entre 1 e 3 para retornar ao menu");
+            Textos.mensagemError("Número inválido");
+            Textos.mensagemYellow("Digite numero entre 1 e 3 para retornar ao menu");
             this.capturaTeclado(this.teclado);
         }if (this.opcaoMenu == 3){
             Menu menu = new Principal();

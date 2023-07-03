@@ -3,9 +3,9 @@ package desafioFinal.services;
 import desafioFinal.conta.Conta;
 import desafioFinal.conta.Corrente;
 import desafioFinal.usuario.Pessoa;
+import desafioFinal.utils.Textos;
 import desafioFinal.validators.TecladoValidator;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContaCorrente {
@@ -44,8 +44,9 @@ public class ContaCorrente {
         double saldo = tecladoValidator.checkInputTecladoDouble(teclado);
         contaCorrente.setSaldo(saldo);
 
-        Conta.conta.add(contaCorrente);
+        Conta.contas.add(contaCorrente);
 
-        System.out.println("Cadastro efetuado com sucesso!");
+        Textos.mensagemGreen("Cadastro efetuado com sucesso!");
+        System.out.println(contaCorrente);
     }
 }

@@ -7,14 +7,14 @@ import java.util.Random;
 public class Corrente extends Conta{
     int pix;
 
-    String tipo;
+    public final static String TIPO = "Conta Corrente";
 
     public Corrente(Pessoa pessoa) {
         Random random = new Random();
         this.pessoa = pessoa;
         this.agencia = random.nextInt(9000) + 1000;
-        this.contacorrente = random.nextInt(90000) + 1000;
-        this.tipo = "Conta Corrente";
+        this.numeroConta = random.nextInt(90000) + 10000;
+        this.tipo = TIPO;
     }
 
     public int getPix() {
@@ -32,7 +32,7 @@ public class Corrente extends Conta{
                 ", senha=" + senha +
                 ", saldo=" + saldo +
                 ", agencia=" + agencia +
-                ", contacorrente=" + contacorrente +
+                ", numeroConta=" + numeroConta +
                 ", pix=" + pix +
                 ", pessoa=" + pessoa.toString() +
                 '}';

@@ -1,24 +1,27 @@
 package desafioFinal.menu;
 
+import desafioFinal.services.Login;
+import desafioFinal.utils.Textos;
+
 import java.util.Scanner;
 
 public class Principal extends Menu{
     @Override
     public void showMenu() {
         System.out.println("");
-        System.out.println("Escolha uma opção :");
-        System.out.println("1 - Cadastrar Conta");
-        System.out.println("2 - Acessar Contas");
-        System.out.println("3 - Sair");
+        Textos.mensagemBlue("Escolha uma opção :");
+        Textos.mensagemYellow("1 - Cadastrar Conta");
+        Textos.mensagemYellow("2 - Acessar Contas");
+        Textos.mensagemYellow("3 - Sair");
     }
 
     public void executaMenu() {
         while (this.opcaoMenu>3 || this.opcaoMenu == 0){
-            System.out.println("Número inválido");
-            System.out.println("Digite numero entre 1 e 3 para retornar ao menu");
+            Textos.mensagemError("Número inválido");
+            Textos.mensagemYellow("Digite numero entre 1 e 3 para retornar ao menu");
             this.capturaTeclado(this.teclado);
         }if (this.opcaoMenu == 3){
-            System.out.println("Programa Encerrado Com sucesso ");
+            Textos.mensagemGreen("Programa Encerrado Com sucesso ");
         }switch (this.opcaoMenu) {
             case 1:
                 Menu menu = new Cadastrar();
@@ -27,7 +30,22 @@ public class Principal extends Menu{
                 menu.executaMenu();
                 break;
             case 2:
-                System.out.println("Acessar ");
+                Login serviceLogin = new Login();
+                serviceLogin.accessarConta();
+                if(!serviceLogin.isLogged()) {
+                    Textos.mensagemError("Autenticação inválida:");
+                    Textos.mensagemError(serviceLogin.getMessageError());
+                    Menu menuPrincipal = new Principal();
+                    menuPrincipal.showMenu();
+                    menuPrincipal.capturaTeclado(teclado);
+                    menuPrincipal.executaMenu();
+                    break;
+                }
+
+                Menu menuAcessar = new Acessar(serviceLogin.getConta());
+                menuAcessar.showMenu();
+                menuAcessar.capturaTeclado(teclado);
+                menuAcessar.executaMenu();
                 break;
         }
     }

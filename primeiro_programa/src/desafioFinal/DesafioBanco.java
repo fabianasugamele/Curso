@@ -3,9 +3,7 @@ package desafioFinal;
 import desafioFinal.conta.Conta;
 import desafioFinal.menu.Menu;
 import desafioFinal.menu.Principal;
-import desafioFinal.services.ContaCorrente;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DesafioBanco {
@@ -16,7 +14,7 @@ public class DesafioBanco {
         menu.capturaTeclado(teclado);
         menu.executaMenu();
 
-        for (Conta element : Conta.conta) {
+        for (Conta element : Conta.contas) {
             System.out.println(element.toString());
         }
     }

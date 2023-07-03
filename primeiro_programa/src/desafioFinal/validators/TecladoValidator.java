@@ -1,16 +1,17 @@
 package desafioFinal.validators;
 
+import desafioFinal.utils.Textos;
+
 import java.util.Scanner;
 
 public class TecladoValidator {
-    final String ANSI_RESET = "\u001B[0m";
-    final String ANSI_RED_BACKGROUND = "\u001B[41m";
+
     public int checkInputTecladoInt(Scanner teclado) {
         while (true) {
             try {
                 return teclado.nextInt();
             } catch (Exception e) {
-                System.out.println(ANSI_RED_BACKGROUND + "O valor deve ser um inteiro. Tente novamente." + ANSI_RESET);
+                Textos.mensagemError("O valor deve ser um inteiro. Tente novamente.");
             } finally{
                 teclado.nextLine();
             }
@@ -24,7 +25,7 @@ public class TecladoValidator {
             inputString = teclado.nextLine();
 
             if (inputString.isEmpty()) {
-                System.out.println(ANSI_RED_BACKGROUND + "O campo não pode ser vazio" + ANSI_RESET);
+                Textos.mensagemError("O campo não pode ser vazio");
             }
         }
 
@@ -36,7 +37,7 @@ public class TecladoValidator {
             try {
                 return teclado.nextDouble();
             } catch (Exception e) {
-                System.out.println(ANSI_RED_BACKGROUND + "O valor deve ser um número. Tente novamente." + ANSI_RESET);
+                Textos.mensagemError("O valor deve ser um número. Tente novamente.");
             } finally{
                 teclado.nextLine();
             }

@@ -11,18 +11,22 @@ public abstract class Conta {
 
     int agencia;
 
-    int contacorrente;
+    int numeroConta;
 
     Pessoa pessoa;
 
-    public static ArrayList<Conta> conta = new ArrayList<>();
+    Login login;
+
+    String tipo;
+
+    public static ArrayList<Conta> contas = new ArrayList<>();
 
     public int getAgencia() {
         return agencia;
     }
 
-    public int getContacorrente() {
-        return contacorrente;
+    public int getNumeroConta() {
+        return numeroConta;
     }
 
     public Pessoa getPessoa() {
@@ -44,4 +48,14 @@ public abstract class Conta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    public Login logar() {
+        return this.login.logar(this.getAgencia(), this.getNumeroConta(), this.getSenha());
+    }
+
+    public void removerConta() { Conta.contas.remove(this);}
 }

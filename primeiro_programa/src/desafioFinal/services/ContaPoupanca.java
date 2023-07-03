@@ -1,9 +1,9 @@
 package desafioFinal.services;
 
 import desafioFinal.conta.Conta;
-import desafioFinal.conta.Corrente;
 import desafioFinal.conta.Poupanca;
 import desafioFinal.usuario.Pessoa;
+import desafioFinal.utils.Textos;
 import desafioFinal.validators.TecladoValidator;
 
 import java.util.Scanner;
@@ -39,8 +39,9 @@ public class ContaPoupanca {
         double saldo = tecladoValidator.checkInputTecladoDouble(teclado);
         contaPoupanca.setSaldo(saldo);
 
-        Conta.conta.add(contaPoupanca);
+        Conta.contas.add(contaPoupanca);
 
-        System.out.println("Cadastro efetuado com sucesso!");
+        Textos.mensagemGreen("Cadastro efetuado com sucesso!");
+        System.out.println(contaPoupanca);
     }
 }
